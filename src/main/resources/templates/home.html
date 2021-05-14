@@ -7,13 +7,15 @@
 <body>
 <h1>Lista użytkowników</h1>
 <ul>
-    <li th:each="user: ${users}" th:text="|${user.firstName} ${user.lastName} ${user.birthday}|"></li>
+    <li th:each="user: ${users}" th:text="|${user.firstName} ${user.lastName} ${user.birthday} ${user.email} ${user.isnewsletter}|"></li>
 </ul>
 
 <form action="/" method="post" th:object="${user}">
     <input type="text" th:field="*{firstName}" placeholder="Imie">
     <input type="text" th:field="*{lastName}" placeholder="Nazwisko">
     <input type="date" th:field="*{birthday}" placeholder="Data urodzenia">
+    <input type="email" th:field="*{email}" placeholder="adres@email.com">
+    <input type="checkbox" value="" th:field="*{isnewsletter}">
     <input type="submit" value="Dodaj!">
 </form>
 </body>

@@ -22,9 +22,9 @@ public class TestDataProvider {
     @EventListener(ApplicationReadyEvent.class)
     public void insertTestData() {
         List<User> users = Arrays.asList(
-                new User("Jan", "Kowalski", LocalDate.of(1990, LocalDate.now().getMonth(), 15)),
-                new User("Marian", "Zieba", LocalDate.of(1980, 07, 10)),
-                new User("Krystyna", "Sawicka", LocalDate.of(1970, 01, 21))
+                new User("Jan", "Kowalski", LocalDate.of(1990, LocalDate.now().getMonth(), 15), "aaaa@aaaa.pl", false),
+                new User("Marian", "Zieba", LocalDate.of(1980, 07, 10), "bbbb@bbbb.pl", true),
+                new User("Krystyna", "Sawicka", LocalDate.of(1970, 01, 21), "cccc@cccc.pl", false)
                 );
         userRepository.saveAll(users);
     }

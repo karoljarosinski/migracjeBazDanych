@@ -21,12 +21,33 @@ public class User {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthday;
 
+    private String email;
+    private boolean isnewsletter;
+
     public User(){}
 
-    public User(String firstName, String lastName, LocalDate birthday) {
+    public User(String firstName, String lastName, LocalDate birthday, String email, boolean isnewsletter) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthday = birthday;
+        this.email = email;
+        this.isnewsletter = isnewsletter;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public boolean isIsnewsletter() {
+        return isnewsletter;
+    }
+
+    public void setIsnewsletter(boolean isnewsletter) {
+        this.isnewsletter = isnewsletter;
     }
 
     public Long getId() {
