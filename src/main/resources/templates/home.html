@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona domowa</title>
+</head>
+<body>
+<h1>Lista użytkowników</h1>
+<ul>
+    <li th:each="user: ${users}" th:text="|${user.firstName} ${user.lastName} ${user.birthday}|"></li>
+</ul>
+
+<form action="/" method="post" th:object="${user}">
+    <input type="text" th:field="*{firstName}" placeholder="Imie">
+    <input type="text" th:field="*{lastName}" placeholder="Nazwisko">
+    <input type="date" th:field="*{birthday}" placeholder="Data urodzenia">
+    <input type="submit" value="Dodaj!">
+</form>
+</body>
+</html>
